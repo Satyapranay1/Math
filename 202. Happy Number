@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isHappy(int n) {
+        if (n == 1){
+            return true;
+        }
+
+        else if (n == 4){
+            return false;
+        }
+        return isHappy(Recur(n));
+
+    }
+
+    public int Recur(int n){
+        int ans = 0;
+        while (n > 0){
+            ans += (n % 10) * (n % 10);
+            n /= 10;
+        }
+        return ans;
+    }
+}
